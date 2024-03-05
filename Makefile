@@ -19,13 +19,13 @@ SRCS = \
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 INCLUDES = \
-  -I ./minilibX -L ./minilibX -lmlx \
+  -I ./minilibx-linux -L ./minilibx-linux -lmlx \
   -I /usr/X11/include -L /usr/X11/lib -lX11 -lXext \
   -I ./libft/inc -L ./libft -lft \
   -I ./inc
 
 LIBFT = ./libft/libft.a
-MINILIBX = ./minilibX/libmlx.a
+MINILIBX = ./minilibx-linux/libmlx.a
 
 all: $(NAME)
 
@@ -33,8 +33,8 @@ $(LIBFT):
 	make -C ./libft
 
 $(MINILIBX):
-	# git clone git@github.com:42Paris/minilibx-linux.git minilibX
-	make -C ./minilibX
+	# git clone git@github.com:42Paris/minilibx-linux.git
+	make -C ./minilibx-linux
 
 $(NAME): $(MINILIBX) $(LIBFT) $(addprefix $(OBJ_DIR)/,$(OBJS))
 	$(CC) $(INCLUDES) $(addprefix $(OBJ_DIR)/,$(OBJS)) -o $(NAME)
@@ -48,12 +48,12 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	make clean -C ./minilibX
+	make clean -C ./minilibx-linux
 	make fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean
-	make re -C ./minilibX
+	make re -C ./minilib-linux
 	make re -C ./libft
 
 .PHONY: all clean fclean re
