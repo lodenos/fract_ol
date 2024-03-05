@@ -1,0 +1,9 @@
+CompileFlags:
+  Add:
+    - "-Wall"
+    - "-Werror"
+    - "-Wextra"
+    - "-Weverything"
+    - "-I/usr/X11/include"
+    - "-I/Users/endurance/Documents/42London/CommonCore/Rank02/fract_ol/inc"
+    - "-I/Users/endurance/Documents/42London/CommonCore/Rank02/fract_ol/minilibX"
