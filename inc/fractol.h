@@ -4,18 +4,17 @@
 #include <mlx.h>
 #include <mlx_int.h>
 
-typedef struct s_complex t_complex;
-typedef struct s_state t_state;
+#include "complex.h"
 
-struct s_complex {
-  double imag;
-  double real;
-};
+typedef struct s_state t_state;
 
 struct s_state {
   void *img_ptr;
   void *mlx_ptr;
   void *win_ptr;
+
+  t_complex start;
+  double step;
 };
 
 enum e_event {

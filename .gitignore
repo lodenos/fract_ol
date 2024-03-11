@@ -1,5 +1,10 @@
+# binary
 fractol
-./obj
+
+# files
 *.a
 *.o
-.*.swp
+.clangd
+
+# folders
+/obj
