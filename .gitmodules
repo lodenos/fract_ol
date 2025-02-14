@@ -1,0 +1,3 @@
+[submodule "c_standard"]
+	path = c_standard
+	url = git@github.com:lodenos/c_standard.git
